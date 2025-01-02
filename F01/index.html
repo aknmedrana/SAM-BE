@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Olympic Moments Archive" />
+    <meta
+      property="og:description"
+      content="Explore and relive the most memorable moments from the Olympic Games."
+    />
+    <meta property="og:image" content="URL_TO_IMAGE_FOR_SOCIAL_MEDIA_SHARE" />
+    <title>Olympic Moments Archive</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .navbar {
+        background-color: #000000;
+      }
+
+      .navbarBrand {
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .heroSection {
+        background-color: #005aa7;
+        color: #fff;
+        padding: 50px 15px;
+        text-align: center;
+      }
+
+      .heroSection h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .heroSection p {
+        font-size: 1.125rem;
+        margin-bottom: 40px;
+      }
+
+      .cardImgTop {
+        max-height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .cardTitle {
+        font-weight: bold;
+      }
+
+      .footer {
+        background-color: #000000;
+        color: #fff;
+        padding: 20px 0;
+      }
+
+      .videoSection iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: #ffd700;
+        border-color: #ffd700;
+        color: #000000;
+      }
+
+      .btn-primary:hover {
+        background-color: #ffcc00;
+        border-color: #a19157;
+        color: #005aa7;
+      }
+
+      .card-body {
+        background-color: #ffffff;
+      }
+
+      .card:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer .d-flex a {
+        color: #ffffff;
+        margin-right: 15px;
+      }
+
+      .footer .d-flex a:hover {
+        color: #ffd700;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbarBrand" href="#" style="text-decoration: none"
+          >Olympic Moments Archive</a
+        >
+      </div>
+    </nav>
+
+    <section class="heroSection p-4">
+      <div class="container">
+        <h1>Relive the Greatest Olympic Moments</h1>
+        <p>
+          Browse, share, and celebrate the most memorable moments from the
+          Olympics.
+        </p>
+        <a href="#moments" class="btn btn-primary">Explore Moments</a>
+      </div>
+      <br />
+      <div class="container">
+        <h2 class="text-center mb-4">Paris 2024 Olympic</h2>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/iVc61V4xhlw?si=UmkXzSrvOcLJSCpE"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="moments" class="py-5">
+      <div class="container">
+        <div class="display-5 mb-3">The Moment Gallery</div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card">
+              <img
+                src="assets/img/bg.png"
+                class="cardImgTop"
+                alt="Olympic Moment"
+              />
+              <div class="card-body">
+                <h5 class="cardTitle">Moment Title</h5>
+                <p class="card-text">
+                  A brief description of the Olympic moment...
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="submitMoment py-5">
+      <div class="container">
+        <h2 class="text-center">Submit Your Favorite Moment</h2>
+        <form class="mt-4" method="POST" action="/submit-moment">
+          <div class="mb-3">
+            <label for="momentTitle" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="momentTitle"
+              placeholder="Enter moment title"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="momentDescription" class="form-label"
+              >Description</label
+            >
+            <textarea
+              class="form-control"
+              id="momentDescription"
+              rows="3"
+              placeholder="Briefly describe the moment..."
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="momentMedia" class="form-label"
+              >Media (Image/Video)</label
+            >
+            <input type="file" class="form-control" id="momentMedia" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Moment</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="text-white pt-4 footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <h5>About Us</h5>
+            <img
+              src="assets/img/white.png"
+              class="mb-3"
+              alt="Olympic Logo"
+              style="width: 200px; height: 100px; object-fit: cover"
+            />
+            <p>
+              Welcome to the Olympic Moments Archive, where we celebrate the
+              spirit of the Games through iconic moments and achievements.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" class="text-white text-decoration-none"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://olympics.com/"
+                  class="text-white text-decoration-none"
+                  >Official Olympics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="tel:+1234567890"
+                  class="text-white text-decoration-none"
+                  >Contact: 123-456-7890</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+            <h5>Follow Us</h5>
+            <div class="d-flex justify-content-center">
+              <a
+                href="https://www.facebook.com/olympics"
+                class="text-white mx-2"
+                ><i class="fab fa-facebook fa-2x"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/olympics/"
+                class="text-white mx-2"
+                ><i class="fab fa-instagram fa-2x"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/olympic-games/"
+                class="text-white mx-2"
+                ><i class="fab fa-linkedin fa-2x"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-light my-4" />
+        <div class="text-center">
+          <p class="mb-0">
+            &copy; 2025 Olympic Moments Archive. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
