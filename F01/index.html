@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="Olympic Moments Archive" />
     <meta
       property="og:description"
@@ -15,256 +15,420 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="assets/img/moments.png" />
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
     />
-
     <style>
       body {
-        font-family: "Poppins", sans-serif;
-        background-color: #f4f4f4;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
       }
 
-      .navbar {
-        background-color: #000000;
+      h1,
+      h2,
+      h3 {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: normal;
       }
 
-      .navbarBrand {
-        font-weight: bold;
-        color: #fff;
+      .navbar .nav-link,
+      .navbar-brand {
+        color: #969696 !important;
       }
 
-      .heroSection {
-        background-color: #005aa7;
-        color: #fff;
-        padding: 50px 15px;
+      .homeSection {
+        color: #0a0a0a;
         text-align: center;
+        padding: 0;
+        margin: 0;
       }
 
-      .heroSection h1 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
+      .homeSection p {
+        font-size: 1.5rem;
       }
 
-      .heroSection p {
-        font-size: 1.125rem;
-        margin-bottom: 40px;
+      .btnOlympic {
+        background-color: #ffd700;
+        color: #000;
+        border: none;
       }
 
-      .cardImgTop {
-        max-height: 200px;
-        object-fit: cover;
-        width: 100%;
+      .btnOlympic:hover {
+        background-color: #ffcc00;
+        color: #005aa7;
       }
 
-      .cardTitle {
-        font-weight: bold;
+      .card {
+        transition: transform 0.3s;
       }
 
       .footer {
-        background-color: #000000;
+        background-color: #000;
         color: #fff;
         padding: 20px 0;
       }
 
-      .videoSection iframe {
+      .footer a {
+        color: #ffd700;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: #ffcc00;
+      }
+
+      @media (max-width: 768px) {
+        .homeSection h1 {
+          font-size: 2.5rem;
+        }
+        .homeSection p {
+          font-size: 1rem;
+        }
+        .textShadow {
+          font-size: 2.5rem;
+        }
+        .textEffect {
+          font-size: 50px;
+        }
+      }
+
+      .textShadow {
+        position: relative;
+        font-size: 4rem;
+        font-weight: bold;
+        color: #000;
+        z-index: 1;
+        margin-top: 40px;
+      }
+
+      .textEffect {
+        position: absolute;
+        top: -20px;
+        left: 10px;
+        z-index: -1;
+        color: rgba(150, 150, 150, 0.2);
+        font-size: 90px;
+        width: 100%;
+      }
+
+      .videoBackground iframe {
         width: 100%;
         height: 100%;
-        border: none;
-      }
-
-      .btn-primary {
-        background-color: #ffd700;
-        border-color: #ffd700;
-        color: #000000;
-      }
-
-      .btn-primary:hover {
-        background-color: #ffcc00;
-        border-color: #a19157;
-        color: #005aa7;
-      }
-
-      .card-body {
-        background-color: #ffffff;
-      }
-
-      .card:hover {
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .footer .d-flex a {
-        color: #ffffff;
-        margin-right: 15px;
-      }
-
-      .footer .d-flex a:hover {
-        color: #ffd700;
+        display: block;
+        margin: 0;
       }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container">
-        <a class="navbarBrand" href="#" style="text-decoration: none"
-          >Olympic Moments Archive</a
-        >
+    <nav class="navbar navbar-dark" style="background-color: #000">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+      >
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="assets/img/w-ob.png"
+            alt="Logo"
+            style="height: 40px; margin-right: 10px"
+          />
+          <span>Olympic Moments</span>
+        </a>
+        <div class="d-flex flex-grow-1">
+          <a href="#momentsSection" class="nav-link text-light mx-3">Moments</a>
+          <a href="#submitSection" class="nav-link text-light mx-3">Submit</a>
+          <a href="#footerSection" class="nav-link text-light mx-3">About</a>
+        </div>
       </div>
     </nav>
 
-    <section class="heroSection p-4">
-      <div class="container">
-        <h1>Relive the Greatest Olympic Moments</h1>
-        <p>
-          Browse, share, and celebrate the most memorable moments from the
-          Olympics.
-        </p>
-        <a href="#moments" class="btn btn-primary">Explore Moments</a>
-      </div>
-      <br />
-      <div class="container">
-        <h2 class="text-center mb-4">Paris 2024 Olympic</h2>
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-8">
-            <div class="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/iVc61V4xhlw?si=UmkXzSrvOcLJSCpE"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
+    <div class="container-fluid p-3 mt-5">
+      <div class="row position-relative">
+        <div class="col-12">
+          <h1 class="textEffect">RELIVE THE GREATEST OLYMPIC MOMENTS</h1>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12">
+          <h1 class="textShadow display-3">
+            RELIVE THE GREATEST OLYMPIC MOMENTS
+          </h1>
+        </div>
+        <div class="container text-center">
+          <div class="row py-5">
+            <p style="margin: 0">
+              Browse and share the most funniest Olympic memes, jokes, and
+              <a
+                href="#momentsSection"
+                class="fw-bold"
+                style="color: #005aa7; text-decoration: none"
+              >
+                memorable moments
+              </a>
+              from the Paris 2024 Olympics. Let's celebrate with a laugh!
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="moments" class="py-5">
+    <header class="homeSection">
+      <div class="videoBackground">
+        <div class="ratio ratio-16x9">
+          <iframe
+            src="https://www.youtube.com/embed/iVc61V4xhlw?si=UmkXzSrvOcLJSCpE&autoplay=1&mute=1&loop=1&playlist=iVc61V4xhlw"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </header>
+
+    <section id="momentGallery" class="py-5" style="background-color: #f4f4f9">
       <div class="container">
-        <div class="display-5 mb-3">The Moment Gallery</div>
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-              <img
-                src="assets/img/bg.png"
-                class="cardImgTop"
-                alt="Olympic Moment"
-              />
+        <h2
+          class="text-center text-uppercase fw-bold mb-5"
+          style="color: #0055a4"
+        >
+          Moment Gallery
+        </h2>
+        <div class="text-center mb-4">
+          <button
+            class="btn btn-primary"
+            style="background-color: #0055a4; border-color: #ffd700"
+            data-bs-toggle="modal"
+            data-bs-target="#submitMomentModal"
+          >
+            Submit Your Favorite Moment
+          </button>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <!-- Social Media Post -->
+          <div class="col">
+            <div
+              class="card shadow-sm border-0 rounded"
+              style="border-radius: 20px"
+            >
               <div class="card-body">
-                <h5 class="cardTitle">Moment Title</h5>
-                <p class="card-text">
-                  A brief description of the Olympic moment...
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="assets/img/bg.png"
+                    alt="User Profile"
+                    class="rounded-circle me-3"
+                    style="
+                      width: 50px;
+                      height: 50px;
+                      object-fit: cover;
+                      border: 2px solid #ffd700;
+                    "
+                  />
+                  <div>
+                    <h6 class="mb-0" style="color: #0055a4">John Doe</h6>
+                    <small class="text-muted">2 hours ago</small>
+                  </div>
+                </div>
+                <p>
+                  When you cross the finish line and still get passed by the guy
+                  with the pizza... hahaha lol
                 </p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <img
+                  src="assets/img/bg.png"
+                  alt="Olympic Moment"
+                  class="img-fluid rounded mb-3"
+                  style="
+                    height: 250px;
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 20px;
+                    border: 3px solid #ffd700;
+                  "
+                />
+                <div class="d-flex justify-content-between">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    style="border-color: #0055a4; color: #0055a4"
+                  >
+                    Like
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary btn-sm"
+                    style="border-color: #ffd700; color: #ffd700"
+                  >
+                    Comment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media Post -->
+          <div class="col">
+            <div
+              class="card shadow-sm border-0 rounded"
+              style="border-radius: 20px"
+            >
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="assets/img/bg.png"
+                    alt="User Profile"
+                    class="rounded-circle me-3"
+                    style="
+                      width: 50px;
+                      height: 50px;
+                      object-fit: cover;
+                      border: 2px solid #ffd700;
+                    "
+                  />
+                  <div>
+                    <h6 class="mb-0" style="color: #0055a4">Jane Smith</h6>
+                    <small class="text-muted">5 hours ago</small>
+                  </div>
+                </div>
+                <p>
+                  Record set for the most pizza slices consumed while watching
+                  the opening ceremony.
+                </p>
+                <img
+                  src="assets/img/bg.png"
+                  alt="Olympic Moment"
+                  class="img-fluid rounded mb-3"
+                  style="
+                    height: 250px;
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 20px;
+                    border: 3px solid #ffd700;
+                  "
+                />
+                <div class="d-flex justify-content-between">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    style="border-color: #0055a4; color: #0055a4"
+                  >
+                    Like
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary btn-sm"
+                    style="border-color: #ffd700; color: #ffd700"
+                  >
+                    Comment
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="submitMoment py-5">
-      <div class="container">
-        <h2 class="text-center">Submit Your Favorite Moment</h2>
-        <form class="mt-4" method="POST" action="/submit-moment">
-          <div class="mb-3">
-            <label for="momentTitle" class="form-label">Title</label>
-            <input
-              type="text"
-              class="form-control"
-              id="momentTitle"
-              placeholder="Enter moment title"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="momentDescription" class="form-label"
-              >Description</label
-            >
-            <textarea
-              class="form-control"
-              id="momentDescription"
-              rows="3"
-              placeholder="Briefly describe the moment..."
-            ></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="momentMedia" class="form-label"
-              >Media (Image/Video)</label
-            >
-            <input type="file" class="form-control" id="momentMedia" />
-          </div>
-          <button type="submit" class="btn btn-primary">Submit Moment</button>
-        </form>
-      </div>
-    </section>
-
-    <footer class="text-white pt-4 footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-4">
-            <h5>About Us</h5>
-            <img
-              src="assets/img/white.png"
-              class="mb-3"
-              alt="Olympic Logo"
-              style="width: 200px; height: 100px; object-fit: cover"
-            />
-            <p>
-              Welcome to the Olympic Moments Archive, where we celebrate the
-              spirit of the Games through iconic moments and achievements.
-            </p>
-          </div>
-          <div class="col-12 col-md-4">
-            <h5>Quick Links</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a href="index.html" class="text-white text-decoration-none"
-                  >Home</a
+      <!-- Modal for Submitting Moment -->
+      <div
+        class="modal fade"
+        id="submitMomentModal"
+        tabindex="-1"
+        aria-labelledby="submitMomentModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5
+                class="modal-title"
+                id="submitMomentModalLabel"
+                style="color: #0055a4"
+              >
+                Submit Your Favorite Moment
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="momentTitle" class="form-label">Title</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="momentTitle"
+                    placeholder="Enter moment title"
+                    style="border-color: #ffd700"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="momentDescription" class="form-label"
+                    >Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="momentDescription"
+                    rows="3"
+                    placeholder="Briefly describe the moment..."
+                    style="border-color: #ffd700"
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="momentMedia" class="form-label">Media</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="momentMedia"
+                    style="border-color: #ffd700"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-sm"
+                  style="background-color: #0055a4; border-color: #ffd700"
                 >
-              </li>
-              <li>
-                <a
-                  href="https://olympics.com/"
-                  class="text-white text-decoration-none"
-                  >Official Olympics</a
-                >
-              </li>
-              <li>
-                <a
-                  href="tel:+1234567890"
-                  class="text-white text-decoration-none"
-                  >Contact: 123-456-7890</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-4 text-center">
-            <h5>Follow Us</h5>
-            <div class="d-flex justify-content-center">
-              <a
-                href="https://www.facebook.com/olympics"
-                class="text-white mx-2"
-                ><i class="fab fa-facebook fa-2x"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/olympics/"
-                class="text-white mx-2"
-                ><i class="fab fa-instagram fa-2x"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/company/olympic-games/"
-                class="text-white mx-2"
-                ><i class="fab fa-linkedin fa-2x"></i
-              ></a>
+                  Submit Moment
+                </button>
+              </form>
             </div>
           </div>
         </div>
-        <hr class="bg-light my-4" />
+      </div>
+    </section>
+
+    <footer id="footerSection" class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>
+              Celebrate the Olympic spirit by reliving historic moments of
+              greatness and unity.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Official Olympics</a></li>
+              <li><a href="tel:+1234567890">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-center">
+            <h5>Follow Us</h5>
+            <a href="#" class="text-light me-3">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="text-light me-3">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-light">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <hr class="border-light" />
         <div class="text-center">
           <p class="mb-0">
             &copy; 2025 Olympic Moments Archive. All Rights Reserved.
