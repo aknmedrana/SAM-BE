@@ -8,8 +8,8 @@
       property="og:description"
       content="Explore and relive the most memorable moments from the Olympic Games."
     />
-    <meta property="og:image" content="URL_TO_IMAGE_FOR_SOCIAL_MEDIA_SHARE" />
-    <title>Olympic Moments Archive</title>
+    <meta property="og:image" content="assets/img/social-share-image.png" />
+    <title>Olympic Moments Archive - 2024</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="assets/img/moments.png" />
+    <link rel="icon" href="assets/img/logo.png" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
@@ -26,62 +26,49 @@
     <style>
       body {
         font-family: "Roboto", sans-serif;
-        font-weight: 400;
       }
-
       h1,
       h2,
       h3 {
         font-family: "Bebas Neue", sans-serif;
-        font-weight: normal;
       }
-
       .navbar .nav-link,
       .navbar-brand {
         color: #969696 !important;
       }
-
       .homeSection {
         color: #0a0a0a;
         text-align: center;
-        padding: 0;
-        margin: 0;
       }
-
-      .homeSection p {
-        font-size: 1.5rem;
-      }
-
       .btnOlympic {
         background-color: #ffd700;
-        color: #000;
-        border: none;
+        color: #005aa7;
+        border: 3px solid #005aa7;
+        transition: background-color 0.3s ease, transform 0.3s ease,
+          color 0.3s ease;
       }
 
       .btnOlympic:hover {
-        background-color: #ffcc00;
-        color: #005aa7;
+        background-color: #fee451;
+        color: #032d52;
+        transform: scale(1.05);
       }
 
       .card {
         transition: transform 0.3s;
       }
-
       .footer {
         background-color: #000;
         color: #fff;
         padding: 20px 0;
       }
-
       .footer a {
         color: #ffd700;
         text-decoration: none;
       }
-
       .footer a:hover {
         color: #ffcc00;
       }
-
       @media (max-width: 768px) {
         .homeSection h1 {
           font-size: 2.5rem;
@@ -96,31 +83,23 @@
           font-size: 50px;
         }
       }
-
       .textShadow {
         position: relative;
         font-size: 4rem;
         font-weight: bold;
         color: #000;
-        z-index: 1;
         margin-top: 40px;
       }
-
       .textEffect {
         position: absolute;
         top: -20px;
         left: 10px;
-        z-index: -1;
         color: rgba(150, 150, 150, 0.2);
         font-size: 90px;
-        width: 100%;
       }
-
       .videoBackground iframe {
         width: 100%;
         height: 100%;
-        display: block;
-        margin: 0;
       }
     </style>
   </head>
@@ -132,16 +111,19 @@
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img
             src="assets/img/w-ob.png"
-            alt="Logo"
+            alt="Olympic Moments Logo"
             style="height: 40px; margin-right: 10px"
           />
           <span>Olympic Moments</span>
         </a>
-        <div class="d-flex flex-grow-1">
-          <a href="#momentsSection" class="nav-link text-light mx-3">Moments</a>
-          <a href="#submitSection" class="nav-link text-light mx-3">Submit</a>
-          <a href="#footerSection" class="nav-link text-light mx-3">About</a>
-        </div>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item mx-2">
+            <a href="#momentsSection" class="nav-link text-light">Moments</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a href="#footerSection" class="nav-link text-light">About</a>
+          </li>
+        </ul>
       </div>
     </nav>
 
@@ -157,15 +139,14 @@
         </div>
         <div class="container text-center">
           <div class="row py-5">
-            <p style="margin: 0">
-              Browse and share the most funniest Olympic memes, jokes, and
+            <p>
+              Browse and share the funniest Olympic memes, jokes, and
               <a
                 href="#momentsSection"
-                class="fw-bold"
-                style="color: #005aa7; text-decoration: none"
+                class="fw-bold text-decoration-none"
+                style="color: #005aa7"
+                >memorable moments</a
               >
-                memorable moments
-              </a>
               from the Paris 2024 Olympics. Let's celebrate with a laugh!
             </p>
           </div>
@@ -177,225 +158,140 @@
       <div class="videoBackground">
         <div class="ratio ratio-16x9">
           <iframe
-            src="https://www.youtube.com/embed/iVc61V4xhlw?si=UmkXzSrvOcLJSCpE&autoplay=1&mute=1&loop=1&playlist=iVc61V4xhlw"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
+            src="https://www.youtube.com/embed/iVc61V4xhlw?autoplay=1&mute=1&loop=1&playlist=iVc61V4xhlw&rel=0"
+            title="Olympic Moments Video"
+            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
         </div>
       </div>
     </header>
 
-    <section id="momentGallery" class="py-5" style="background-color: #f4f4f9">
+    <section
+      id="featuredSection"
+      class="py-5"
+      style="background-color: #f4f4f9"
+    >
       <div class="container">
         <h2
           class="text-center text-uppercase fw-bold mb-5"
           style="color: #0055a4"
         >
-          Moment Gallery
+          Featured Moments
         </h2>
-        <div class="text-center mb-4">
+
+        <div
+          id="featuredCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card shadow-sm border-0 rounded">
+                <img
+                  src="assets/img/bg.png"
+                  class="d-block w-100 rounded"
+                  alt="Historic Gold Medal Victory"
+                />
+                <div class="card-body">
+                  <h5 class="card-title" style="color: #0055a4">
+                    Historic Gold Medal Victory
+                  </h5>
+                  <p class="card-text">
+                    A heart-stopping race that ended with a glorious gold medal.
+                    Relive the excitement!
+                  </p>
+                  <a href="#momentsSection" class="btn btn-primary btnOlympic"
+                    >Watch Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Add more carousel items as necessary -->
+          </div>
+
           <button
-            class="btn btn-primary"
-            style="background-color: #0055a4; border-color: #ffd700"
-            data-bs-toggle="modal"
-            data-bs-target="#submitMomentModal"
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#featuredCarousel"
+            data-bs-slide="prev"
           >
-            Submit Your Favorite Moment
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
           </button>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <!-- Social Media Post -->
-          <div class="col">
-            <div
-              class="card shadow-sm border-0 rounded"
-              style="border-radius: 20px"
-            >
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <img
-                    src="assets/img/bg.png"
-                    alt="User Profile"
-                    class="rounded-circle me-3"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      object-fit: cover;
-                      border: 2px solid #ffd700;
-                    "
-                  />
-                  <div>
-                    <h6 class="mb-0" style="color: #0055a4">John Doe</h6>
-                    <small class="text-muted">2 hours ago</small>
-                  </div>
-                </div>
-                <p>
-                  When you cross the finish line and still get passed by the guy
-                  with the pizza... hahaha lol
-                </p>
-                <img
-                  src="assets/img/bg.png"
-                  alt="Olympic Moment"
-                  class="img-fluid rounded mb-3"
-                  style="
-                    height: 250px;
-                    width: 100%;
-                    object-fit: cover;
-                    border-radius: 20px;
-                    border: 3px solid #ffd700;
-                  "
-                />
-                <div class="d-flex justify-content-between">
-                  <button
-                    class="btn btn-outline-primary btn-sm"
-                    style="border-color: #0055a4; color: #0055a4"
-                  >
-                    Like
-                  </button>
-                  <button
-                    class="btn btn-outline-secondary btn-sm"
-                    style="border-color: #ffd700; color: #ffd700"
-                  >
-                    Comment
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Social Media Post -->
-          <div class="col">
-            <div
-              class="card shadow-sm border-0 rounded"
-              style="border-radius: 20px"
-            >
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <img
-                    src="assets/img/bg.png"
-                    alt="User Profile"
-                    class="rounded-circle me-3"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      object-fit: cover;
-                      border: 2px solid #ffd700;
-                    "
-                  />
-                  <div>
-                    <h6 class="mb-0" style="color: #0055a4">Jane Smith</h6>
-                    <small class="text-muted">5 hours ago</small>
-                  </div>
-                </div>
-                <p>
-                  Record set for the most pizza slices consumed while watching
-                  the opening ceremony.
-                </p>
-                <img
-                  src="assets/img/bg.png"
-                  alt="Olympic Moment"
-                  class="img-fluid rounded mb-3"
-                  style="
-                    height: 250px;
-                    width: 100%;
-                    object-fit: cover;
-                    border-radius: 20px;
-                    border: 3px solid #ffd700;
-                  "
-                />
-                <div class="d-flex justify-content-between">
-                  <button
-                    class="btn btn-outline-primary btn-sm"
-                    style="border-color: #0055a4; color: #0055a4"
-                  >
-                    Like
-                  </button>
-                  <button
-                    class="btn btn-outline-secondary btn-sm"
-                    style="border-color: #ffd700; color: #ffd700"
-                  >
-                    Comment
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal for Submitting Moment -->
-      <div
-        class="modal fade"
-        id="submitMomentModal"
-        tabindex="-1"
-        aria-labelledby="submitMomentModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5
-                class="modal-title"
-                id="submitMomentModalLabel"
-                style="color: #0055a4"
-              >
-                Submit Your Favorite Moment
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="momentTitle" class="form-label">Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="momentTitle"
-                    placeholder="Enter moment title"
-                    style="border-color: #ffd700"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="momentDescription" class="form-label"
-                    >Description</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="momentDescription"
-                    rows="3"
-                    placeholder="Briefly describe the moment..."
-                    style="border-color: #ffd700"
-                  ></textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="momentMedia" class="form-label">Media</label>
-                  <input
-                    type="file"
-                    class="form-control"
-                    id="momentMedia"
-                    style="border-color: #ffd700"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-sm"
-                  style="background-color: #0055a4; border-color: #ffd700"
-                >
-                  Submit Moment
-                </button>
-              </form>
-            </div>
-          </div>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#featuredCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </section>
+
+    <!-- Random Olympic Moment Generator -->
+    <section id="randomMomentSection" class="py-5">
+      <div class="container text-center">
+        <h2
+          class="text-center text-uppercase fw-bold mb-5"
+          style="color: #0055a4"
+        >
+          Random Olympic Moment
+        </h2>
+
+        <!-- Button to generate random moment -->
+        <button id="randomMomentBtn" class="btn btnOlympic">
+          Show Random Olympic Moment
+        </button>
+
+        <!-- Display the random moment -->
+        <div id="randomMoment" class="mt-4">
+          <h4 id="momentTitle"></h4>
+          <p id="momentDescription"></p>
+          <img id="momentImage" class="img-fluid" alt="Olympic Moment" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document
+        .getElementById("randomMomentBtn")
+        .addEventListener("click", showRandomMoment);
+
+      const olympicMoments = [
+        {
+          title: "Historic Gold Medal Victory",
+          description:
+            "A heart-stopping race that ended with a glorious gold medal.",
+          image: "assets/img/gold_medal.jpg",
+        },
+        {
+          title: "Record-Breaking Sprint",
+          description: "An athlete set a new world record in the 100m sprint!",
+          image: "assets/img/sprint.jpg",
+        },
+        {
+          title: "Dramatic Final Lap",
+          description:
+            "In a thrilling final lap, the runner took home the gold.",
+          image: "assets/img/final_lap.jpg",
+        },
+        // Add more moments as needed
+      ];
+
+      function showRandomMoment() {
+        const randomIndex = Math.floor(Math.random() * olympicMoments.length);
+        const moment = olympicMoments[randomIndex];
+
+        document.getElementById("momentTitle").textContent = moment.title;
+        document.getElementById("momentDescription").textContent =
+          moment.description;
+        document.getElementById("momentImage").src = moment.image;
+      }
+    </script>
 
     <footer id="footerSection" class="footer">
       <div class="container">
@@ -417,22 +313,18 @@
           </div>
           <div class="col-md-4 text-center">
             <h5>Follow Us</h5>
-            <a href="#" class="text-light me-3">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="text-light me-3">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-light">
-              <i class="fab fa-linkedin"></i>
-            </a>
+            <a href="#" class="text-light me-3"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-light me-3"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
         <hr class="border-light" />
         <div class="text-center">
-          <p class="mb-0">
-            &copy; 2025 Olympic Moments Archive. All Rights Reserved.
-          </p>
+          <p>&copy; 2025 Olympic Moments Archive. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

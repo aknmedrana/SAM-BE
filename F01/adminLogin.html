@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login / Sign Up - Olympic Moments</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/img/logo.png" />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        overflow: hidden;
+        background-color: #f0f0f0;
+      }
+      .videoBackground {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .videoBackground iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .formContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 450px;
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .formContainer h1 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        color: #005aa7;
+        margin-bottom: 20px;
+      }
+      .formContainer .formControl {
+        border: 2px solid #ffd700;
+      }
+      .formContainer .formControl:focus {
+        border-color: #005aa7;
+        box-shadow: none;
+      }
+      .formContainer .btnPrimary {
+        background-color: #005aa7;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+      .formContainer .btnPrimary:hover {
+        background-color: #032d52;
+      }
+      .formContainer .toggleLink {
+        text-align: center;
+        margin-top: 15px;
+        color: #005aa7;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .formContainer .toggleLink:hover {
+        text-decoration: underline;
+      }
+      .adminVersion {
+        color: #e74c3c;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video Background -->
+    <div class="videoBackground">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/qOmHZIL-IVA?si=1foAewVa5JbtsW2G&autoplay=1&mute=1&loop=1&playlist=qOmHZIL-IVA&controls=0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      >
+      </iframe>
+    </div>
+
+    <!-- Admin Login and Sign Up Forms -->
+    <div class="formContainer" id="formContainer">
+      <!-- Admin Login Form -->
+      <div id="loginForm">
+        <h1>Admin Login</h1>
+        <form action="admin_dashboard.html" method="POST">
+          <div class="mb-3">
+            <label for="email" class="formLabel">Admin Email address</label>
+            <input
+              type="email"
+              class="formControl form-control"
+              id="email"
+              name="email"
+              placeholder="Enter your admin email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="formLabel">Password</label>
+            <input
+              type="password"
+              class="formControl form-control"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button type="submit" class="btnPrimary btn w-100">Login</button>
+        </form>
+        <div class="toggleLink" id="showSignUp">
+          Don't have an admin account? Sign Up
+        </div>
+      </div>
+
+      <!-- Admin Sign Up Form -->
+      <div id="signUpForm" style="display: none">
+        <h1>Admin Sign Up</h1>
+        <form action="admin_signup.html" method="POST">
+          <div class="mb-3">
+            <label for="signUpEmail" class="formLabel"
+              >Admin Email address</label
+            >
+            <input
+              type="email"
+              class="formControl form-control"
+              id="signUpEmail"
+              name="signUpEmail"
+              placeholder="Enter your admin email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="signUpPassword" class="formLabel">Password</label>
+            <input
+              type="password"
+              class="formControl form-control"
+              id="signUpPassword"
+              name="signUpPassword"
+              placeholder="Create a password"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="confirmPassword" class="formLabel"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              class="formControl form-control"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="adminCode" class="formLabel">Admin Code</label>
+            <input
+              type="text"
+              class="formControl form-control"
+              id="adminCode"
+              name="adminCode"
+              placeholder="Enter your unique admin code"
+              required
+            />
+            <small class="adminVersion"
+              >* Only authorized users can create an admin account</small
+            >
+          </div>
+          <button type="submit" class="btnPrimary btn w-100">Sign Up</button>
+        </form>
+        <div class="toggleLink" id="showLogin">
+          Already have an admin account? Login
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const showSignUp = document.getElementById("showSignUp");
+      const showLogin = document.getElementById("showLogin");
+      const loginForm = document.getElementById("loginForm");
+      const signUpForm = document.getElementById("signUpForm");
+
+      showSignUp.addEventListener("click", () => {
+        loginForm.style.display = "none";
+        signUpForm.style.display = "block";
+      });
+
+      showLogin.addEventListener("click", () => {
+        loginForm.style.display = "block";
+        signUpForm.style.display = "none";
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
