@@ -205,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </a>
       <ul class="navbar-nav d-flex flex-row">
         <li class="nav-item mx-2">
-          <a href="#momentsSection" class="nav-link text-light">Moments</a>
+          <a href="#featuredMoments" class="nav-link text-light">Moments</a>
         </li>
         <li class="nav-item mx-2">
           <a href="#footerSection" class="nav-link text-light">About</a>
@@ -231,7 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row py-5">
           <p>
             Browse and share the funniest Olympic memes, jokes, and
-            <a href="#momentsSection" class="fw-bold text-decoration-none" style="color: #005aa7">memorable moments</a>
+            <a href="#featuredMoments" class="fw-bold text-decoration-none" style="color: #005aa7">memorable moments</a>
             from the Paris 2024 Olympics. Let's celebrate with a laugh!
           </p>
         </div>
